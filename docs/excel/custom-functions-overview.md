@@ -253,8 +253,8 @@ For example, suppose that your function returns the second highest value from a 
 ```js
 function secondHighest(values){
      let highest = values[0][0], secondHighest = values[0][0];
-     for(var i = 0; i < values.length; i++){
-         for(var j = 1; j < values[i].length; j++){
+     for(let i = 0; i < values.length; i++){
+         for(let j = 1; j < values[i].length; j++){
              if(values[i][j] >= highest){
                  secondHighest = highest;
                  highest = values[i][j];
@@ -274,7 +274,7 @@ When you build an add-in that defines custom functions, be sure to include error
 
 ```js
 function getComment(x) {
-    //this delivers a section of lorem ipsum from the jsonplaceholder API
+    //This samples uses jsonplaceholder (https://github.com/typicode/jsonplaceholder) for educational purposes only.
     let url = "https://jsonplaceholder.typicode.com/comments/" + x;
 
     return fetch(url)

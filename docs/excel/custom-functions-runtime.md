@@ -8,9 +8,9 @@ title: Runtime for Excel custom functions
 
 Custom functions extend Excel’s capabilities by using a new JavaScript runtime that uses a sandboxed JavaScript engine rather than a web browser. Because custom functions do not need to render UI elements, the new JavaScript runtime is optimized for performing calculations, enabling you to run thousands of custom functions simultaneously.
 
-## Key facts about the new JavaScript runtime 
+## Key facts about the new JavaScript runtime
 
-Only custom functions within an add-in will use the new JavaScript runtime that's described in this article. If an add-in includes other components such as task panes and other UI elements, in addition to custom functions, these other components of the add-in will continue to run in the browser-like WebView runtime.  Additionally: 
+Only custom functions within an add-in will use the new JavaScript runtime that's described in this article. If an add-in includes other components such as task panes and other UI elements, in addition to custom functions, these other components of the add-in will continue to run in the browser-like WebView runtime.  Additionally:
 
 - The JavaScript runtime does not provide access to the Document Object Model (DOM) or support libraries like jQuery that rely on the DOM.
 
@@ -45,7 +45,7 @@ function getTemperature(thermometerID) {
 
 //Helper method that uses Office's implementation of XMLHttpRequest in the new JavaScript runtime for custom functions  
 function sendWebRequest(thermometerID, data) {
-    var xhttp = new XMLHttpRequest();
+    let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
            data.temperature = JSON.parse(xhttp.responseText).temperature
@@ -115,7 +115,7 @@ _goGetData = async () => {
 
 ### Dialog API
 
-The Dialog API enables you to open a dialog box that prompts user sign-in. You can use the Dialog API to require user authentication through an outside resource, such as Google or Facebook, before the user can use your function.   
+The Dialog API enables you to open a dialog box that prompts user sign-in. You can use the Dialog API to require user authentication through an outside resource, such as Google or Facebook, before the user can use your function.
 
 In the following code sample, the `getTokenViaDialog()` method uses the Dialog API’s `displayWebDialog()` method to open a dialog box.
 
