@@ -14,7 +14,8 @@ When you build an add-in that defines custom functions, be sure to include error
 
 ```js
 function getComment(x) {
-    let url = "https://jsonplaceholder.typicode.com/comments/" + x; 
+    //This samples uses jsonplaceholder (https://github.com/typicode/jsonplaceholder) for educational purposes only.
+    let url = "https://jsonplaceholder.typicode.com/comments/" + x;
     return fetch(url)
         .then(function (data) {
             return data.json();
