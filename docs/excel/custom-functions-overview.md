@@ -274,7 +274,7 @@ When you build an add-in that defines custom functions, be sure to include error
 
 ```js
 function getComment(x) {
-    //This samples uses jsonplaceholder (https://github.com/typicode/jsonplaceholder) for educational purposes only.
+    //This samples uses jsonplaceholder (https://github.com/typicode/jsonplaceholder) that is (C) Typicode and used under MIT license for educational purposes only.
     let url = "https://jsonplaceholder.typicode.com/comments/" + x;
 
     return fetch(url)
